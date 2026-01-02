@@ -1,0 +1,7 @@
+{
+  "name": "Volo3D Gallery",
+  "description": "A premium gallery platform for 3D scans, featuring interactive grids, AI-enhanced metadata, and a sleek modern interface.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
