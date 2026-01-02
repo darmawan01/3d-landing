@@ -61,6 +61,7 @@ const AssetDetail: React.FC<AssetDetailProps> = ({ asset, onClose }) => {
           />
           
           <div className={`w-full h-full transition-all duration-1000 ${isVisualOverride ? 'brightness-125 saturate-150 contrast-125 hue-rotate-[180deg]' : ''}`}>
+            {/* @ts-ignore */}
             <model-viewer
               src={activeModel}
               alt={asset.title}

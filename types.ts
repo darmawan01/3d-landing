@@ -30,10 +30,4 @@ export interface User {
 export type AppView = 'landing' | 'gallery' | 'detail';
 
 // Extend JSX namespace to include the <model-viewer> custom element
-declare global {
-  namespace JSX {
-    interface IntrinsicElements {
-      'model-viewer': any;
-    }
-  }
-}
+

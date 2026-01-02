@@ -56,6 +56,7 @@ const LandingPage: React.FC<LandingPageProps> = ({ onLogin }) => {
             {/* Live 3D Preview in Hero */}
             <div className="absolute inset-0 z-10 glass-card rounded-[4rem] overflow-hidden border-white/5 shadow-[0_0_80px_rgba(99,102,241,0.15)] group">
                {/* model-viewer custom element recognized via global declaration in types.ts */}
+               {/* @ts-ignore */}
                <model-viewer
                  src="https://modelviewer.dev/shared-assets/models/Astronaut.glb"
                  auto-rotate

@@ -52,6 +52,7 @@ const Gallery: React.FC = () => {
             >
               <div className="relative aspect-[16/10] glass-card rounded-[3rem] overflow-hidden border-white/10 group-hover:border-indigo-500/50 transition-all">
                 <div className="absolute inset-0 bg-gradient-to-tr from-indigo-950/40 via-transparent to-transparent z-10" />
+                {/* @ts-ignore */}
                 <model-viewer
                   src={asset.modelUrl}
                   auto-rotate
