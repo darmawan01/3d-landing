@@ -11,21 +11,16 @@ export const SAMPLE_ASSETS: Asset3D[] = [
     category: 'Object',
     polyCount: '45k',
     fileSize: '2.5MB',
-    description: 'A classic 3D astronaut model used for neural testing and fidelity calibration.'
+    isHighlighted: true,
+    description: 'A classic 3D astronaut model used for neural testing and fidelity calibration.',
+    versions: [
+      { date: '2024-01-01', modelUrl: 'https://modelviewer.dev/shared-assets/models/Astronaut.glb', label: 'Alpha Capture' },
+      { date: '2024-03-15', modelUrl: 'https://modelviewer.dev/shared-assets/models/Astronaut.glb', label: 'Fidelity Pass' },
+      { date: '2024-05-12', modelUrl: 'https://modelviewer.dev/shared-assets/models/Astronaut.glb', label: 'Final Archive' }
+    ]
   },
   {
     id: '2',
-    title: 'Vintage Chair Scan',
-    thumbnail: 'https://modelviewer.dev/shared-assets/models/Chair.glb',
-    modelUrl: 'https://modelviewer.dev/shared-assets/models/Chair.glb',
-    date: '2024-05-10',
-    category: 'Object',
-    polyCount: '12k',
-    fileSize: '1.2MB',
-    description: 'Industrial chair reconstruction captured using high-density photogrammetry.'
-  },
-  {
-    id: '3',
     title: 'Heritage Suit',
     thumbnail: 'https://modelviewer.dev/shared-assets/models/NeilArmstrong.glb',
     modelUrl: 'https://modelviewer.dev/shared-assets/models/NeilArmstrong.glb',
@@ -33,7 +28,19 @@ export const SAMPLE_ASSETS: Asset3D[] = [
     category: 'Art',
     polyCount: '89k',
     fileSize: '15.4MB',
+    isHighlighted: true,
     description: 'Detailed scan of a historical space suit, preserving every fiber in 3D space.'
+  },
+  {
+    id: '3',
+    title: 'Vintage Chair',
+    thumbnail: 'https://modelviewer.dev/shared-assets/models/Chair.glb',
+    modelUrl: 'https://modelviewer.dev/shared-assets/models/Chair.glb',
+    date: '2024-05-10',
+    category: 'Object',
+    polyCount: '12k',
+    fileSize: '1.2MB',
+    description: 'Industrial chair reconstruction captured using high-density photogrammetry.'
   },
   {
     id: '4',

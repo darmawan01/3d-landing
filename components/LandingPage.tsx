@@ -1,6 +1,8 @@
 
 import React from 'react';
 import { ScanIcon, BoxIcon, SparklesIcon, LayersIcon } from './Icons';
+// Import types to ensure global JSX declarations are recognized
+import '../types';
 
 interface LandingPageProps {
   onLogin: () => void;
@@ -53,6 +55,7 @@ const LandingPage: React.FC<LandingPageProps> = ({ onLogin }) => {
           <div className="hidden lg:block relative h-[600px] animate-in fade-in zoom-in duration-1000 delay-300">
             {/* Live 3D Preview in Hero */}
             <div className="absolute inset-0 z-10 glass-card rounded-[4rem] overflow-hidden border-white/5 shadow-[0_0_80px_rgba(99,102,241,0.15)] group">
+               {/* model-viewer custom element recognized via global declaration in types.ts */}
                <model-viewer
                  src="https://modelviewer.dev/shared-assets/models/Astronaut.glb"
                  auto-rotate

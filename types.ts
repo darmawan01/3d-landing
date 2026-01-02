@@ -1,15 +1,23 @@
 
+export interface AssetVersion {
+  date: string;
+  modelUrl: string;
+  label: string;
+}
+
 export interface Asset3D {
   id: string;
   title: string;
   thumbnail: string;
-  modelUrl?: string; // Link to actual .glb file
+  modelUrl?: string;
   date: string;
   category: 'Personal' | 'Object' | 'Environment' | 'Art';
   description?: string;
   polyCount: string;
   fileSize: string;
   aiInsights?: string;
+  isHighlighted?: boolean;
+  versions?: AssetVersion[]; // For Time Series
 }
 
 export interface User {
@@ -20,3 +28,12 @@ export interface User {
 }
 
 export type AppView = 'landing' | 'gallery' | 'detail';
+
+// Extend JSX namespace to include the <model-viewer> custom element
+declare global {
+  namespace JSX {
+    interface IntrinsicElements {
+      'model-viewer': any;
+    }
+  }
+}
