@@ -58,7 +58,7 @@ const Gallery: React.FC<GalleryProps> = ({ onLogout }) => {
       />
 
       {/* Main Content */}
-      <div className={`flex-1 transition-all duration-300 ease-in-out ${isSidebarOpen ? 'lg:pl-0' : 'lg:ml-64'} w-full h-screen overflow-y-auto`}>
+      <div className="flex-1 transition-all duration-300 ease-in-out w-full h-screen overflow-y-auto">
         <div className="max-w-[1600px] mx-auto p-6 md:p-8">
           
           <DashboardHeader 
