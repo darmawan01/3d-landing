@@ -6,17 +6,28 @@ interface DashboardHeaderProps {
   setSearchQuery: (q: string) => void;
   activeTab: 'feed' | 'edit';
   setActiveTab: (t: 'feed' | 'edit') => void;
+  onMenuClick: () => void;
 }
 
 const DashboardHeader: React.FC<DashboardHeaderProps> = ({ 
   searchQuery, 
   setSearchQuery, 
   activeTab, 
-  setActiveTab 
+  setActiveTab,
+  onMenuClick
 }) => {
   return (
     <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 mb-10">
-      <h1 className="text-4xl font-heading font-medium text-white tracking-tight">Dashboard</h1>
+      
+      {/* Title & Menu Toggle */}
+      <div className="flex items-center gap-4 w-full md:w-auto justify-between md:justify-start">
+         <button onClick={onMenuClick} className="lg:hidden text-gray-400 hover:text-white">
+            <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+         </button>
+         <h1 className="text-4xl font-heading font-medium text-white tracking-tight">Dashboard</h1>
+      </div>
       
       {/* Tabs */}
       <div className="flex items-center gap-8 relative">

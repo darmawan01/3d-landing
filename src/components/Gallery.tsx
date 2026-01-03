@@ -12,9 +12,12 @@ interface GalleryProps {
 
 const Gallery: React.FC<GalleryProps> = ({ onLogout }) => {
   const [selectedAsset, setSelectedAsset] = useState<Asset3D | null>(null);
+  const [activeTab, setActiveTab] = useState<'feed' | 'edit'>('feed');
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  
+  // Existing state
   const [filter, setFilter] = useState<string>('All');
   const [searchQuery, setSearchQuery] = useState('');
-  const [activeTab, setActiveTab] = useState<'feed' | 'edit'>('feed');
 
   // Hardcoded current user for demo
   const currentUser = {
@@ -38,27 +41,32 @@ const Gallery: React.FC<GalleryProps> = ({ onLogout }) => {
     return SAMPLE_ASSETS.filter(a => {
       // Very simple mapping for the new categories vs old ones
       const matchesSearch = a.title.toLowerCase().includes(searchQuery.toLowerCase());
-      // In a real app, match categories properly. 
-      // Here just ignoring strict category matching to show content.
-      return matchesSearch;
+      const matchesFilter = filter === 'All' || a.category === (filter === 'Technology' ? 'Object' : filter); // Loose mapping
+      return matchesSearch && matchesFilter;
     });
   }, [filter, searchQuery]);
 
   return (
-    <div className="flex min-h-screen font-sans overflow-hidden">
+    <div className="min-h-screen bg-[#020617] text-white flex relative overflow-hidden">
       
       {/* Sidebar */}
-      <Sidebar user={currentUser} onLogout={onLogout} />
+      <Sidebar 
+        user={currentUser} 
+        onLogout={onLogout} 
+        isOpen={isSidebarOpen} 
+        onClose={() => setIsSidebarOpen(false)} 
+      />
 
       {/* Main Content */}
-      <main className="flex-1 ml-64 p-8 overflow-y-auto h-screen relative">
-        <div className="max-w-[1600px] mx-auto">
+      <div className={`flex-1 transition-all duration-300 ease-in-out ${isSidebarOpen ? 'lg:pl-0' : 'lg:ml-64'} w-full h-screen overflow-y-auto`}>
+        <div className="max-w-[1600px] mx-auto p-6 md:p-8">
           
           <DashboardHeader 
              searchQuery={searchQuery} 
              setSearchQuery={setSearchQuery} 
              activeTab={activeTab}
              setActiveTab={setActiveTab}
+             onMenuClick={() => setIsSidebarOpen(true)}
           />
 
           {/* Filter Bar */}
@@ -126,7 +134,7 @@ const Gallery: React.FC<GalleryProps> = ({ onLogout }) => {
           </div>
 
         </div>
-      </main>
+      </div>
 
       {/* Asset Detail Overlay (Keeping existing functionality) */}
       {selectedAsset && (

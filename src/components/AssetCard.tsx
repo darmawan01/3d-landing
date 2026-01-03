@@ -10,7 +10,7 @@ interface AssetCardProps {
 const AssetCard: React.FC<AssetCardProps> = ({ asset, onClick, className = '' }) => {
   return (
     <div 
-      className={`group relative rounded-[2rem] overflow-hidden cursor-pointer bg-[#1A1D24] ${className}`}
+      className={`group relative rounded-[2rem] overflow-hidden cursor-pointer glass-card ${className}`}
       onClick={onClick}
     >
       {/* 3D Model / Thumbnail */}
