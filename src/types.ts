@@ -12,6 +12,11 @@ export interface Asset3D {
   modelUrl?: string;
   date: string;
   category: 'Personal' | 'Object' | 'Environment' | 'Art';
+  tags?: string[];
+  author?: {
+    name: string;
+    avatar: string;
+  };
   description?: string;
   polyCount: string;
   fileSize: string;

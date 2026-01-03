@@ -19,10 +19,10 @@ const LandingPage: React.FC<LandingPageProps> = ({ onLogin }) => {
           <div className="text-left space-y-10 animate-in fade-in slide-in-from-left-12 duration-1000">
             <div className="inline-flex items-center gap-3 px-5 py-2 glass rounded-full border border-white/10">
               <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 shadow-[0_0_15px_rgba(16,185,129,0.6)]" />
-              <span className="text-[10px] font-black tracking-[0.3em] uppercase text-gray-300">Live Global Archive v4.2</span>
+              <span className="text-[10px] font-heading font-black tracking-[0.3em] uppercase text-gray-300">Live Global Archive v4.2</span>
             </div>
             
-            <h1 className="text-7xl md:text-[6.5rem] font-black leading-[0.85] tracking-tighter">
+            <h1 className="text-7xl md:text-[6.5rem] font-heading font-black leading-[0.85] tracking-tighter">
               Archive <br/>
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-violet-400 to-fuchsia-400">
                 Your Reality.
@@ -70,7 +70,7 @@ const LandingPage: React.FC<LandingPageProps> = ({ onLogin }) => {
                
                <div className="absolute bottom-10 left-10 p-6 glass rounded-3xl border-white/10 backdrop-blur-md">
                  <p className="text-[10px] font-black text-indigo-400 uppercase tracking-widest mb-1">Live Asset Stream</p>
-                 <p className="text-2xl font-black">Archive-412.glb</p>
+                 <p className="text-2xl font-heading font-black">Archive-412.glb</p>
                </div>
             </div>
 
@@ -92,7 +92,7 @@ const LandingPage: React.FC<LandingPageProps> = ({ onLogin }) => {
           ].map((stat, i) => (
             <div key={i} className="text-center space-y-1">
                <p className="text-[10px] font-bold text-gray-500 uppercase tracking-widest">{stat.label}</p>
-               <p className="text-3xl font-black">{stat.value}</p>
+               <p className="text-3xl font-heading font-black">{stat.value}</p>
             </div>
           ))}
         </div>
@@ -111,7 +111,7 @@ const LandingPage: React.FC<LandingPageProps> = ({ onLogin }) => {
                 {feat.icon}
               </div>
               <div className="space-y-4">
-                <h3 className="text-2xl font-black">{feat.title}</h3>
+                <h3 className="text-2xl font-heading font-black">{feat.title}</h3>
                 <p className="text-gray-400 text-sm leading-relaxed font-light">{feat.desc}</p>
               </div>
             </div>
